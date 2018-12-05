@@ -1,6 +1,6 @@
 <template>
-	<div class="height:100px">
-		index 页面
+	<div>
+		innerList
 	</div>
 </template>
 
