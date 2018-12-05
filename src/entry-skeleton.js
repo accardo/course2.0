@@ -2,6 +2,7 @@ import Vue from 'vue';
 import indexList from '@/skeleton/indexList';
 import innerList from '@/skeleton/innerList';
 
+
 export default new Vue({
 	components: {
 		indexList,

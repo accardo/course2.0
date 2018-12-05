@@ -39,7 +39,7 @@ module.exports = {
 									]
 								}
 						})
-				]
+				];
 				config.plugins = [...config.plugins, ...plugins];
     },
 }
