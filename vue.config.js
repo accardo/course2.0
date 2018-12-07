@@ -4,11 +4,16 @@ const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin');
 function resolve (dir) {
     return path.join(__dirname,dir);
 }
-  
 module.exports = {
-	// cli3 路径配置
-    configureWebpack: config => {
-				console.log(config.plugins, 'config');
+    // cli3 路径配置
+		baseUrl: process.env.NODE_ENV === 'production' ? './' : '/',
+		//baseUrl: './',
+		assetsDir: 'static',
+		//outputDir: path.resolve(__dirname, 'dist'),
+		productionSourceMap: true,
+		parallel: true,
+		lintOnSave: true,
+		configureWebpack: config => {
 				config.resolve = {
 						extensions: ['.js', '.vue', '.json',".css"],
 						alias: {
@@ -16,6 +21,13 @@ module.exports = {
 								'@': resolve('src'),
 						}
 				};
+
+		    if (process.env.NODE_ENV === 'production') {
+			      console.log(process.env, '生产'); // 生产环境
+		    } else {
+		    	  console.log(process.env, '开发')
+			     // console.log(config, '开发'); // 为开发环境修改配置...
+		    }
 				let plugins = [
 						new SkeletonWebpackPlugin({ // 骨架屏插件
 								webpackConfig: {
@@ -29,7 +41,7 @@ module.exports = {
 									mode: 'history',
 									routes: [
 										{
-											path: '/index',
+											path: '/',
 											skeletonId: 'indexList'
 										},
 										{
@@ -41,5 +53,5 @@ module.exports = {
 						})
 				];
 				config.plugins = [...config.plugins, ...plugins];
-    },
+		},
 }

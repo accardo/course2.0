@@ -13,7 +13,7 @@
 		},
 		mounted() {
 			this.$http._get({
-				url: 'https://store-wms-s.daydaycook.com.cn/wms/service/shop/list',
+				url: '/wms/service/shop/list',
 			}).then((data) => {
 				console.log(data);
 			});

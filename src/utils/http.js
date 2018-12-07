@@ -1,9 +1,10 @@
 import axios from 'axios'
-import { delay } from '@/utils/util'
+// import { delay } from '@/utils/util'
 // 废弃 保留
 // axios.defaults.baseURL = process.env.NODE_ENV === 'development' ? '/sys' : '/newfib.php'
-//axios.defaults.baseURL = '/member'
+// axios.defaults.baseURL = '/member'
 // axios.defaults.timeout = process.env.TIMEOUT || 10000 // 响应时间
+axios.defaults.baseURL = process.env.VUE_APP_URL;
 axios.defaults.headers['Content-Type'] = 'application/json'
 axios.defaults.headers['X-Requested-With'] = 'XMLHttpRequest'
 
@@ -49,6 +50,7 @@ export const _get = (req) => {
 	if (typeof req === 'string') {
 		return instance.get(req)
 	}
+	console.log(req, 'URL')
 	return instance.get(req.url, { params: req.data })
 }
 
