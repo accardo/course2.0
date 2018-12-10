@@ -4,16 +4,15 @@ import offlineCourse from '@/pages/offlineCourse/router'
 Vue.use(Router);
 
 const router = new Router({
-	base: '/',
-  mode: 'history',
+	mode: 'history',
+	base: '/course/'
 });
-
 
 router.addRoutes(offlineCourse);
 
 router.addRoutes([{ path: '*', name: '404', component: {
-  template: '<p>Page Not Found</p>'
+  template: '<p>错误，页面没找到</p>'
 } }]);
-
+console.log(router)
 
 export default router;
