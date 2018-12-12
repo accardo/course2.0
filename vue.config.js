@@ -6,13 +6,13 @@ function resolve (dir) {
 }
 module.exports = {
     // cli3 路径配置
-		baseUrl: process.env.NODE_ENV === 'production' ? '/course' : '/',
+		baseUrl: process.env.NODE_ENV === 'production' ? './' : '/',
 		//baseUrl: './',
 		assetsDir: 'static',
 		//outputDir: path.resolve(__dirname, 'dist'),
-		// productionSourceMap: true,
-		// parallel: true,
-		// lintOnSave: true,
+		productionSourceMap: true,
+		parallel: true,
+		lintOnSave: true,
 		configureWebpack: config => {
 				config.resolve = {
 						extensions: ['.js', '.vue', '.json',".css"],
@@ -38,7 +38,7 @@ module.exports = {
 								minimize: true,
 								quiet: true,
 								router: {
-									mode: 'history',
+									mode: 'hash',
 									routes: [
 										{
 											path: '/',

@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>course2.0</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <script>
+		  (function (win, doc) {
+			  window.applicationCache.addEventListener("updateready",function(){
+				  window.location.reload(true);
+			  });
+
+			  function setSize() {
+				  doc.documentElement.style.fontSize = 100 * document.documentElement.clientWidth / 750 + 'px';
+			  }
+
+			  setSize();
+			  win.addEventListener('resize', setSize, false)
+		  })(window, document)
+    </script>
+    <link rel="preload" href="<%= BASE_URL %>layout.css" as="style" onload="this.onload=null;this.rel='stylesheet';window.STYLE_READY=true;window.mountApp && window.mountApp()">
+    <title>线下课程2.0</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but course2.0 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>请启用JavaScript，否则无法运行。</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

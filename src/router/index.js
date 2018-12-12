@@ -4,8 +4,7 @@ import offlineCourse from '@/pages/offlineCourse/router'
 Vue.use(Router);
 
 const router = new Router({
-	mode: 'history',
-	base: '/course/'
+	mode: 'hash',
 });
 
 router.addRoutes(offlineCourse);
